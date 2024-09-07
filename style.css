@@ -1,0 +1,21 @@
+*{
+    border:0px;
+    margin:0px;
+    box-sizing: border-box;
+}
+ .image{
+    background-image: url("https://ik.imagekit.io/varsh0506/Food%20Store/pexels-catscoming-1907227.jpg?updatedAt=1724662230069");
+    background-repeat: no-repeat;
+    background-size: cover;
+ }
+
+input:focus{
+    outline: none;
+ }
+
+ @media screen and (min-width: 400px) and ( max-width :750px){
+    .image {
+        background-image:url("https://ik.imagekit.io/varsh0506/Food%20Store/headerimg.jpg?updatedAt=1725130104592");
+    }
+}
+
