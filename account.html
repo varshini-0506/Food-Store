@@ -27,33 +27,34 @@
 
 <body class="font-[Poppins]">
     <div class="image h-screen 2xl:container mx-auto">
-        <div id="loginbox" class="w-[90%] h-screen mx-auto text-white">
+        <div id="loginbox" class="w-[90%] h-screen mx-auto text-white backdrop-blur-md">
             <div class="h-screen grid grid-cols-1 md:grid-cols-2">
                 <div class="hidden md:flex flex-col gap-7 justify-center items-center text-center">
                     <p class="font-semibold text-[60px]">Welcome Back!</p>
-                    <p>Log in to continue your culinary adventure with us</p>
+                    <p class="text-center text-lg">Log in to continue your culinary adventure with us</p>
                 </div>
                 <div class="flex flex-col justify-center items-center gap-5">
-                    <div class="md:hidden flex font-semibold text-[45px] text-center">Welcome Back!</div>
                     <div
                         class="flex flex-col gap-7 w-fit h-fit justify-center items-center border-white border-2 border-solid p-10 m-20 md:m-0">
                         <div>
                             <p class="font-medium text-[35px]">LOGIN</p>
                         </div>
-                        <div
+                        <form class="flex flex-col gap-5 justify-center items-center">
+                            <div
                             class="p-2 border-white border-2 border-solid flex flex-row gap-x-3 justify-center items-center">
                             <i class="fa-solid fa-user"></i>
-                            <input type="text" placeholder="Enter email/username" class="bg-transparent">
+                            <input type="text" placeholder="Enter email/username" class="bg-transparent" required>
                         </div>
                         <div
                             class="p-2 border-white border-2 border-solid flex flex-row gap-x-3 justify-center items-center">
                             <i class="fa-solid fa-lock"></i>
-                            <input type="password" placeholder="Enter password" class="bg-transparent">
+                            <input type="password" placeholder="Enter password" class="bg-transparent" required>
                         </div>
                         <div>
                             <button
                                 class="border-white border-2 border-solid p-2 px-4 text-center hover:text-gray-400 hover:cursor-pointer hover:border-gray-400">LOGIN</button>
                         </div>
+                        </form>
                         <div>
                             <p>Don't have an account? <button id="log" class="log hover:text-gray-400 hover:cursor-pointer"
                                     >SIGNUP</button></p>
@@ -63,44 +64,45 @@
                 </div>
             </div>
         </div>
-        <div id="signbox" class="w-[90%] h-screen mx-auto text-white hidden">
+        <div id="signbox" class="w-[90%] h-screen mx-auto text-white hidden backdrop-blur-md">
             <div class="h-screen grid grid-cols-1 md:grid-cols-2">
                 <div class="hidden md:flex flex-col gap-7 justify-center items-center text-center">
-                    <p class="font-semibold text-[60px]">Join Eats n Treats Today!</p>
-                    <p class="hidden md:flex">Sign up now and enjoy exclusive offers, hassle-free orders, and quick access to your favorite meals!
+                    <p class="font-semibold text-[60px] text-center">Join Eats n Treats Today!</p>
+                    <p class="hidden md:flex text-center text-lg">Sign up now and enjoy exclusive offers, hassle-free orders, and quick access to your favorite meals!
                     </p>
                 </div>
                 <div class="flex flex-col justify-center items-center gap-5">
-                    <div class="md:hidden flex font-semibold text-[45px] text-center">Join Eats n Treats Today!</div>
                     <div
                         class="flex flex-col gap-7 w-fit h-fit justify-center items-center border-white border-2 border-solid p-10 m-20 md:m-0">
                         <div>
                             <p class="font-medium text-[35px]">SIGNUP</p>
                         </div>
-                        <div
+                        <form class="flex flex-col gap-5 justify-center items-center">
+                            <div
                             class="p-2 border-white border-2 border-solid flex flex-row gap-x-3 justify-center items-center">
                             <i class="fa-solid fa-user"></i>
-                            <input type="text" placeholder="Enter Username" class="bg-transparent">
+                            <input type="text" placeholder="Enter Username" class="bg-transparent" required>
                         </div>
                         <div
                             class="p-2 border-white border-2 border-solid flex flex-row gap-x-3 justify-center items-center">
                             <i class="fa-solid fa-envelope"></i>
-                            <input type="email" placeholder="Enter Email" class="bg-transparent">
+                            <input type="email" placeholder="Enter Email" class="bg-transparent" required>
                         </div>
                         <div
                             class="p-2 border-white border-2 border-solid flex flex-row gap-x-3 justify-center items-center">
                             <i class="fa-solid fa-lock"></i>
-                            <input type="password" placeholder="Enter password" class="bg-transparent">
+                            <input type="password" placeholder="Enter password" class="bg-transparent" required>
                         </div>
                         <div
                             class="p-2 border-white border-2 border-solid flex flex-row gap-x-3 justify-center items-center">
                             <i class="fa-solid fa-lock"></i>
-                            <input type="password" placeholder="Confirm password" class="bg-transparent">
+                            <input type="password" placeholder="Confirm password" class="bg-transparent" required>
                         </div>
                         <div>
                             <button
                                 class="border-white border-2 border-solid p-2 px-4 text-center hover:text-gray-400 hover:cursor-pointer hover:border-gray-400">SIGNUP</button>
                         </div>
+                        </form>
                         <div>
                             <p>Already have an account? <button id="sign" class=" hover:text-gray-400 hover:cursor-pointer"
                                    >LOGIN</button></p>

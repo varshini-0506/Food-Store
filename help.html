@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HELP</title>
+    <link rel="icon"
+        href="https://ik.imagekit.io/varsh0506/Food%20Store/Untitled%20design%20(6).png?updatedAt=1724956732297">
+
+    <!--Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!--Icon-->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://kit.fontawesome.com/64a7f05020.js" crossorigin="anonymous"></script>
+
+    <!--css links-->
+    <link rel="stylesheet" href="style.css">
+
+    <!--javascript-->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body class="image font-[Poppins]">
+    <div class="2xl:container mx-auto h-screen">
+        <div class="w-[90%] mx-auto grid grid-cols-2 text-white h-[100%] backdrop-blur-md">
+             <div class="flex flex-col gap-6 justify-center items-center">
+                <p class="font-semibold text-[60px] text-center">Get in Touch with Us</p>
+                <p class="text-center text-lg">We're here to help! Reach out to us with any questions, feedback, or inquiries, and we'll respond as soon as possible</p>
+             </div>
+             <div class="flex flex-col justify-center items-center">
+                <form id="form_el" class="border-white border-solid border-2 p-5 w-[80%] flex flex-col gap-5">
+                    <div class="flex flex-col gap-4">
+                        <div class="flex justify-between">
+                            <label for="name_ip" class="text-lg">Name</label>
+                            <p id="name_com"></p>
+                        </div>
+                        <input class="bg-transparent border-white border-solid border-2 focus:border-[1px] p-5" id="name_ip" type="text" placeholder="Enter Username">
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <div class="flex justify-between">
+                            <label for="mail_ip" class="text-lg">Email</label>
+                            <p id="mail_com"></p>
+                        </div>
+                        <input class="bg-transparent border-white border-solid border-2 focus:border-[1px] p-5" id="mail_ip" type="email" placeholder="Enter Email">
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <div class="flex justify-between">
+                            <label for="msg_ip" class="text-lg">How can we help you ?</label>
+                            <p id="msg_com"></p>
+                        </div>
+                        <textarea class="bg-transparent border-white border-solid border-2 p-5" id="msg_ip" placeholder="Enter query or feedback"></textarea>
+                    </div>
+                    <button class=" hover:text-gray-400 hover:cursor-pointer">SUBMIT</button>
+                    <p id="comment"></p>
+                    <a href="index.html" class=" hover:text-gray-400 hover:cursor-pointer flex justify-center items-center">HOME</a>
+                </form>
+             </div>
+        </div>
+    </div>
+    
+</body>
+
+<!---------Form validation------------>
+<script>
+    const form= document.getElementById("form_el");
+
+    const name= document.getElementById("name_ip");
+    const email= document.getElementById("mail_ip");
+    const msg= document.getElementById("msg_ip");
+    
+    const name_para= document.getElementById("name_com");
+    const mail_para= document.getElementById("mail_com");
+    const msg_para= document.getElementById("msg_com");
+    const para= document.getElementById("comment");
+
+    /* validate functions checks if the input fields are empty- alternative for "required" keyword*/
+    function validate_name(n) {
+        if (n==""){
+          name_para.textContent="*Required field!";
+        }
+        else{
+            name_para.textContent="";
+        }
+    }
+
+    function validate_mail(n) {
+        if (n==""){
+          mail_para.textContent="*Required field!";
+        }
+        else{
+            mail_para.textContent="";
+        }
+    }
+
+    function validate_msg(n) {
+        if (n==""){
+          msg_para.textContent="*Required field!";
+        }
+        else{
+            msg_para.textContent="";
+        }
+    }
+
+    function validate(n,em,m){                /*this validate function checks if the i/p fields are empty while submission*/
+        if (n==""){
+          name_para.textContent="*Required field!";
+        }
+        else{
+            name_para.textContent="";
+        }
+        if (em==""){
+          mail_para.textContent="*Required field!";
+        }
+        else{
+            mail_para.textContent="";
+        }
+        if (m==""){
+          msg_para.textContent="*Required field!";
+        }
+        else{
+            msg_para.textContent="";
+        }
+    }
+
+    name.addEventListener("blur",(e)=>{
+       validate_name(e.target.value);
+    })
+
+    email.addEventListener("blur",(e)=>{
+       validate_mail(e.target.value);
+    })
+
+    msg.addEventListener("blur",(e)=>{
+       validate_msg(e.target.value);
+    })
+
+    form.addEventListener("submit",(e)=>{
+        e.preventDefault();
+        validate(name.value,email.value,msg.value);
+         savedata(name.value,email.value,msg.value);
+         para.textContent="Form Submitted!";
+         e.reset();
+    })
+</script>
+</html>
